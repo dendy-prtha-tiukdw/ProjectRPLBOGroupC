@@ -1,32 +1,41 @@
 package org.groupa;
 
 public class Tabungan {
-    String pemilik;
-    double saldo;
+
+    private String pemilik;
+    private double saldo;
 
     //konstruktor
-    public Tabungan(String namaPemilik, double saldoAwal){
+    public Tabungan(String namaPemilik, double saldoAwal) {
         pemilik = namaPemilik;
         saldo = saldoAwal;
     }
 
-    String getPemilik() {
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    private void setSaldo(double saldo) {
+        if (saldo >= 0)
+            this.saldo = saldo;
+    }
+
+    public String getPemilik() {
         return pemilik;
     }
 
-    double getSaldo() {
-        return saldo;
+    public void setPemilik(String pemilik) {
+        this.pemilik = pemilik;
     }
 
     void penarikan(double jumlah) {
         if (jumlah > 0 && saldo >= jumlah) {
-            saldo = saldo - jumlah;
+            this.setSaldo(this.saldo - jumlah);
         }
-
     }
 
     void penyetoran(double jumlah) {
         if (jumlah > 0)
-            saldo = saldo + jumlah;
+            this.setSaldo(saldo + jumlah);
     }
 }

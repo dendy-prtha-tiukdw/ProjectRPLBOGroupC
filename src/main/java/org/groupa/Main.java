@@ -14,24 +14,32 @@ public class Main {
 //        lampu1.nyala();
 //        System.out.println(lampu1.warnaSekarang());
 
-        Tabungan tabunganGerhut = new Tabungan("gerhut",300);
-        System.out.println(tabunganGerhut.getSaldo());
-        System.out.println(tabunganGerhut.getPemilik());
+//        Tabungan tabunganGerhut = new Tabungan("gerhut",300);
+//        System.out.println(tabunganGerhut.getSaldo());
+//        System.out.println(tabunganGerhut.getPemilik());
+//
+//        Tabungan tabunganIvan = new Tabungan("Ivan",1200);
+//        System.out.println(tabunganIvan.getSaldo());
+//        System.out.println(tabunganIvan.getPemilik());
+//        tabunganIvan.penyetoran(300);
+//        System.out.println(tabunganIvan.getSaldo());
+//        tabunganIvan.penarikan(-500);
+//        System.out.println("Sado akhir Ivan : "+tabunganIvan.getSaldo());
+//
+//        tabunganGerhut.penarikan(150);
+//        System.out.println(tabunganGerhut.getSaldo());
+//        tabunganGerhut.penyetoran(-1000);
+//        System.out.println("Sado akhir Gerhut : "+tabunganGerhut.getSaldo());
 
-        Tabungan tabunganIvan = new Tabungan("Ivan",1200);
-        System.out.println(tabunganIvan.getSaldo());
-        System.out.println(tabunganIvan.getPemilik());
-        tabunganIvan.penyetoran(300);
-        System.out.println(tabunganIvan.getSaldo());
-        tabunganIvan.penarikan(-500);
-        System.out.println("Sado akhir Ivan : "+tabunganIvan.getSaldo());
 
-        tabunganGerhut.penarikan(150);
-        System.out.println(tabunganGerhut.getSaldo());
-        tabunganGerhut.penyetoran(-1000);
-        System.out.println("Sado akhir Gerhut : "+tabunganGerhut.getSaldo());
+        Lampu lampuHitam = LampuFactory.getInstance().createLampu(LampuFactory.LAMPU_HITAM);
+        Lampu lampuMerah = LampuFactory.getInstance().createLampu(LampuFactory.LAMPU_MERAH);
+        Lampu lampuNdakJelas = LampuFactory.getInstance().createLampu(10);
+
+        System.out.println(lampuHitam.warnaSekarang());
+        System.out.println(lampuMerah.warnaSekarang());
+        System.out.println(lampuNdakJelas.warnaSekarang());
     }
-
 
     public static int findMax(int arr[]){
         int max= 0;
@@ -43,3 +51,4 @@ public class Main {
         return max;
     }
 }
+
